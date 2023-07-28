@@ -65,7 +65,7 @@ use std::ffi::OsString;
 use std::io;
 
 match_cfg! {
-    #[cfg(any(unix, target_os = "redox"))] => {
+    #[cfg(any(unix, target_os = "redox", target_arch="wasm32"))] => {
         extern crate libc;
 
         mod nix;
